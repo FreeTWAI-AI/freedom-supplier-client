@@ -1,5 +1,21 @@
 # 自由工坊 · 供應端客戶端
 
+<!-- freedom-repository-guide:start -->
+## 在自由工坊的位置
+
+[自由工坊](https://freetwai.com) 讓會員先完成定位、選擇公會並領取 Repo 技能書，再以供貨、商店、開源作品、行銷與小隊共同完成成果。
+
+可 Fork 的供應端客戶端，讓供貨者讀取自己的中央商品與供貨申請。 Node 24 CLI 已提供 connect、products／requests／connection 私人 JSON 讀取。
+
+商品新增、改價與供貨決定目前回中央網站操作；沒有客戶端寫入、訂單、付款或公開 feed。
+
+本 repo 的維護者負責「可 Fork 的供應端客戶端，讓供貨者讀取自己的中央商品與供貨申請。」這個模組；公會職稱與自填 GitHub slug 不授予寫入權。
+
+程式／內容入口：[src/index.mjs](src/index.mjs)、[client/](client/)、[scripts/run-client.mjs](scripts/run-client.mjs)、[scripts/verify-client-source.mjs](scripts/verify-client-source.mjs)、[tests/](tests/)。協作先讀 [CONTRIBUTING.md](CONTRIBUTING.md)，讓 Agent 讀 [AGENTS.md](AGENTS.md)；從[本倉 Issues](https://github.com/FreeTWAI-AI/freedom-supplier-client/issues)認領、[查看既有 PR](https://github.com/FreeTWAI-AI/freedom-supplier-client/pulls)避免重工。
+
+supplier:read 僅讀本人的資料；token 保存在 repo 外本人可讀檔案，不進 browser、source 或 Pages。client/ 由中央 helper 產生並由 client-source.lock.json 記來源；改共用 transport 先到中央 repo。 跨 repo 的協定由[中央平台](https://github.com/FreeTWAI-AI/freedom-platform)維護。
+<!-- freedom-repository-guide:end -->
+
 [開始刊登商品](https://freetwai.com/#supplier) · [Fork 我的客戶端](https://github.com/FreeTWAI-AI/freedom-supplier-client/fork) · [核准／撤銷讀取連線](https://freetwai.com/#account)
 
 這是供貨者可以 Fork、改造的第一本技能書。現在先在自由工坊網站刊登商品、整理供貨條件與處理合作申請；這個客戶端連回同一個中央平台，讀取**你自己的商品和供貨申請**。不需要重新輸入一份商品資料，也不建立另一套會員、資料庫或收款帳。
