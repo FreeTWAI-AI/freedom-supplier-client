@@ -1,0 +1,187 @@
+{
+  "schema_version": "freedom.project/v1",
+  "kind": "Project",
+  "project_id": "project:freedom-supplier-client",
+  "slug": "freedom-supplier-client",
+  "name": "Freedom Supplier Client",
+  "summary": "Forkable supplier client reading member-owned products and supply requests from the central platform.",
+  "project_type": "integration",
+  "lifecycle": "incubating",
+  "description": {
+    "problem": "Forkable supplier client reading member-owned products and supply requests from the central platform.",
+    "audiences": [
+      "Freedom suppliers",
+      "client maintainers and contributors"
+    ],
+    "capabilities": [
+      "Pair a supplier read client through explicit approval in the member browser",
+      "Read own products and supply requests from the central platform"
+    ],
+    "limitations": [
+      "Product publication and supply mutations remain in the platform website",
+      "No checkout, payment execution, separate user database or anonymous product feed",
+      "Short-lived read token remains in a private client-owned 0600 file outside the repository and browser",
+      "Quality and release fields declare intended policy; they do not attest an enforced ruleset or a signed release",
+      "NOASSERTION means licensing remains undecided; this metadata grants no additional reuse rights",
+      "The project introduction is its README; GitHub Pages and production client hosting are not enabled"
+    ]
+  },
+  "ownership": {
+    "ownership_mode": "external_owner",
+    "accountable_team": null,
+    "external_owner": {
+      "type": "Organization",
+      "account_id": "331546855",
+      "login": "FreeTWAI-AI",
+      "html_url": "https://github.com/FreeTWAI-AI"
+    },
+    "accountable_party_ref": "user:teddashh",
+    "module_stewardship_ref": null,
+    "vertical": "commerce",
+    "maintainer_teams": [],
+    "maintainer_accounts": [
+      {
+        "type": "User",
+        "account_id": "233386770",
+        "login": "teddashh",
+        "html_url": "https://github.com/teddashh"
+      }
+    ],
+    "security_contact": "https://github.com/teddashh"
+  },
+  "repository": {
+    "full_name": "FreeTWAI-AI/freedom-supplier-client",
+    "html_url": "https://github.com/FreeTWAI-AI/freedom-supplier-client",
+    "repository_id": "1382994244",
+    "default_branch": "main",
+    "visibility": "public",
+    "is_fork": false,
+    "upstream": null,
+    "creation_method": "original",
+    "source_lineage": []
+  },
+  "page": {
+    "publication": "withheld",
+    "requested_trust_label": "incubating",
+    "source": "generated",
+    "canonical_platform_url": "https://freetwai.com/",
+    "github_pages_url": null,
+    "exception_reason": "Supplier starter uses its repository README until a separate introduction page is explicitly prepared; no automatic Pages deployment.",
+    "required_sections": [
+      "identity_and_status",
+      "problem_and_audience",
+      "capabilities_and_limitations",
+      "links",
+      "release",
+      "ownership_and_security",
+      "license_and_data_boundary",
+      "fork_lineage",
+      "build_provenance",
+      "canonical_platform_link"
+    ]
+  },
+  "fork_policy": {
+    "mode": "allowed",
+    "allowed_purposes": [
+      "contribution"
+    ],
+    "allow_private_forks": false,
+    "new_independent_project_method": "template",
+    "official_status_inherited": false,
+    "fork_badge": "Community fork — not an official Freedom release"
+  },
+  "release": {
+    "policy": "freedom.semver-immutable/v1",
+    "tag_format": "vMAJOR.MINOR.PATCH[-PRERELEASE]",
+    "source_branch": "main",
+    "immutable": true,
+    "page_from": "published_release"
+  },
+  "toolchain": {
+    "profile": "freedom.custom-reviewed/v1",
+    "runtime_version_file": ".tool-versions",
+    "package_manager": "npm",
+    "lockfile": "package-lock.json",
+    "commands_source": "trusted_build_profile"
+  },
+  "licensing": {
+    "spdx_expression": "NOASSERTION",
+    "license_file": null,
+    "source_distribution": "source_available",
+    "commercial_terms_url": null
+  },
+  "deployment": {
+    "runtime": "library_only",
+    "environments": {
+      "preview": {
+        "provider": "none",
+        "trigger": "none",
+        "url": null,
+        "requires_human_approval": false,
+        "external_fork_policy": "artifact_only",
+        "external_fork_preview_exception": "trusted_manual_two_stage_static_only"
+      },
+      "staging": {
+        "provider": "none",
+        "trigger": "none",
+        "url": null,
+        "requires_human_approval": false
+      },
+      "production": {
+        "provider": "none",
+        "trigger": "none",
+        "url": null,
+        "requires_human_approval": false
+      }
+    },
+    "database_migration_strategy": "none"
+  },
+  "data_boundary": {
+    "classification": "internal",
+    "platform_record_types": [],
+    "customer_data_mode": "external_client_owned",
+    "credential_reference_metadata_in_postgres": false,
+    "dynamic_credential_storage": [
+      "client_owned"
+    ],
+    "credential_root_key_storage": "none",
+    "stores_payment_instrument_data": false,
+    "stores_plaintext_credentials": true,
+    "external_systems_of_record": [
+      "github",
+      "client_storage"
+    ],
+    "client_credential_policy": {
+      "kind": "scoped_read_token",
+      "max_lifetime_seconds": 604800,
+      "local_file_mode": "0600",
+      "repo_storage": false,
+      "browser_storage": false
+    }
+  },
+  "quality": {
+    "required_checks": [
+      "manifest/schema",
+      "manifest/github-consistency",
+      "test",
+      "page/build",
+      "security",
+      "release-policy"
+    ],
+    "minimum_human_reviews": 1,
+    "production_human_approval": true,
+    "sensitive_paths": [
+      "freedom.project.yaml",
+      ".github/**",
+      "SECURITY.md",
+      "LICENSE",
+      "site/assets/brand/**"
+    ]
+  },
+  "links": {
+    "documentation": "https://github.com/FreeTWAI-AI/freedom-supplier-client/blob/main/README.md",
+    "demo": null,
+    "support": "https://github.com/FreeTWAI-AI/freedom-supplier-client/issues",
+    "issues": "https://github.com/FreeTWAI-AI/freedom-supplier-client/issues"
+  }
+}

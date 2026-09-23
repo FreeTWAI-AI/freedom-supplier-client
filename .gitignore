@@ -1,0 +1,17 @@
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
+dist/
+snapshots/
+credentials/
+.freedom/
+*.credentials.json
+*credential*.json
+*.token
+*.pem
+*.local.json
+private/
+read-output/
+test-results/
