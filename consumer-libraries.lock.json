@@ -1,9 +1,9 @@
 {
   "format": "freedom.consumer-libraries/v1",
   "repository": "FreeTWAI-AI/freedom-supplier-client",
-  "consumer_base_commit": "53fd5b0ac4a1b67ccd71a8cc4ba092ea15bb3534",
+  "consumer_base_commit": "701de4770e1cc154c2971be25053c77e96b6fd20",
   "source_repository": "FreeTWAI-AI/freedom-platform",
-  "source_commit": "61c2081c7746c57044aae5031c4303516b336e80",
+  "source_commit": "91b943ac61e132fbbce72ea066cb2301aa065600",
   "files": [
     {
       "source_path": "packages/client-connections/read-client.mjs",
