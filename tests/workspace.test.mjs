@@ -14,3 +14,11 @@ test('storefront grant is rejected and upstream denial cannot become empty succe
  await assert.rejects(()=>loadSupplierWorkspace({async read(){calls++;return {kind:'storefront',scope:'storefront:read',read_only:true};}}),/supplier read connection/);assert.equal(calls,1);
  await assert.rejects(()=>loadSupplierWorkspace({async read(resource){if(resource==='connection')return {kind:'supplier',scope:'supplier:read',read_only:true};throw Error('Revoked connection');}}),/Revoked connection/);
 });
+
+test('product entrypoint imports the pinned shared workspace and scoped transport', async () => {
+ const shared=await import('../vendor/freedom-libraries/packages/client-connections/supplier-workspace.mjs');
+ const transport=await import('../vendor/freedom-libraries/packages/client-connections/read-client.mjs');
+ const entry=await import('../src/index.mjs');
+ assert.equal(loadSupplierWorkspace,shared.loadSupplierWorkspace);
+ assert.equal(entry.ScopedReadClient,transport.ScopedReadClient);
+});

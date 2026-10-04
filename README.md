@@ -68,3 +68,15 @@ const workspace = await loadSupplierWorkspace(client);
 `client/` 的共用 transport 與 CLI 來自 `freedom-platform/packages/client-connections`；來源 commit、檔案路徑與 SHA-256 記錄在 `client-source.lock.json`。執行 `npm run verify:client-source -- --remote` 可驗證固定版本。修改客戶端介面時，保留原始 transport 或經明確更新來源與測試後再同步。
 
 本 repo 尚未選定額外程式授權，沒有自動授予第三方商用或再授權權利；平台原作者與引用專案的授權各自保留。此模板不包含買家結帳、金流、訂單履約或正式供貨合約。
+
+## Shared supplier workspace
+
+`src/index.mjs` imports both the scoped read transport and supplier workspace reader from the separately pinned central `vendor/freedom-libraries` source. Existing calls to `loadSupplierWorkspace(client)` keep the connection/products/requests order and read-only shape. Wrong scope rejects before reading products; expired or revoked connections propagate the server rejection without retries. No write, publication or payment capability is added.
+
+`consumer-libraries.lock.json` records source bytes separately from the unchanged preview contract and existing CLI source pin. Verify against an independently selected source SHA before publication:
+
+```sh
+node scripts/verify-consumer-libraries.mjs FreeTWAI-AI/freedom-supplier-client EXPECTED_PLATFORM_SHA --source-root /path/to/platform
+```
+
+Use `--remote` after the exact source is publicly reachable. Source verification does not establish release approval, installed governance or complete runtime coverage.
